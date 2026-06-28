@@ -1,0 +1,73 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-serif: "Noto Serif SC", "Songti SC", "SimSun", serif;
+  --font-sans: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top left, rgba(184, 148, 94, 0.18), transparent 28rem),
+    radial-gradient(circle at top right, rgba(49, 83, 63, 0.12), transparent 24rem),
+    #fbf8f0;
+  color: #1f2421;
+}
+
+::selection {
+  background: rgba(184, 148, 94, 0.28);
+}
+
+.ink-wash {
+  position: relative;
+  overflow: hidden;
+}
+
+.ink-wash::before,
+.ink-wash::after {
+  content: "";
+  position: absolute;
+  border-radius: 999px;
+  filter: blur(8px);
+  opacity: 0.45;
+  pointer-events: none;
+}
+
+.ink-wash::before {
+  width: 24rem;
+  height: 24rem;
+  right: -8rem;
+  top: 3rem;
+  background: rgba(49, 83, 63, 0.13);
+}
+
+.ink-wash::after {
+  width: 18rem;
+  height: 18rem;
+  left: -6rem;
+  bottom: 2rem;
+  background: rgba(184, 148, 94, 0.14);
+}
+
+.float-cloud {
+  animation: float-cloud 12s ease-in-out infinite;
+}
+
+@keyframes float-cloud {
+  0%, 100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(0, -14px, 0);
+  }
+}
